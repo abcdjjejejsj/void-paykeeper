@@ -25,7 +25,7 @@ document.getElementById('contact-form').addEventListener('submit', function (e) 
     };
   
     // Send a POST request to submit the contact form data to the backend
-    fetch('http://localhost:5000/submit-contact', {
+    fetch('https://void-paykeeper-2.onrender.com/submit-contact', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
@@ -46,25 +46,7 @@ document.getElementById('contact-form').addEventListener('submit', function (e) 
 // Hero button click action
 
 
-/* Service card hover effect
-const serviceCards = document.querySelectorAll('.service-card');
-serviceCards.forEach(card => {
-    card.addEventListener('mouseenter', () => {
-        card.style.transform = 'scale(1.05)';
-        card.style.transition = 'transform 0.3s';
-    });
 
-    card.addEventListener('mouseleave', () => {
-        card.style.transform = 'scale(1)';
-    });
-});
-*/
-
-/* Contact form submission handling
-document.querySelector('.send').addEventListener('click', function () {
-    alert("Thank you for reaching out! We will get back to you soon.");
-});
-*/
 document.addEventListener('DOMContentLoaded', function() {
     const sendButton = document.querySelector('.send');
     if (sendButton) {
