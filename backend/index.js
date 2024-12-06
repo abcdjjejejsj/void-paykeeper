@@ -3,6 +3,14 @@ const cors = require('cors');
 const mongoose = require('mongoose');
 const bcrypt = require('bcryptjs'); // Ensure bcrypt is imported
 const path = require('path');
+const corsOptions = {
+  origin: ['https://void-paykeeper-2.onrender.com/'], // Update with the actual URL of your deployed frontend
+  methods: 'GET, POST, PUT, DELETE',
+  allowedHeaders: 'Content-Type, Authorization',
+};
+
+app.use(cors(corsOptions));
+
 
 // MongoDB connection
 const dbURI = 'mongodb+srv://vaibhavsalve645:FsbxDbYVNw3cB42p@cluster0.m4md1.mongodb.net/paykeeperData?retryWrites=true&w=majority';
