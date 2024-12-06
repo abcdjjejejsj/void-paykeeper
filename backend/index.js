@@ -2,6 +2,7 @@ const express = require('express');
 const cors = require('cors');
 const mongoose = require('mongoose');
 const bcrypt = require('bcryptjs'); // Ensure bcrypt is imported
+const path = require('path');
 
 // MongoDB connection
 const dbURI = 'mongodb+srv://vaibhavsalve645:FsbxDbYVNw3cB42p@cluster0.m4md1.mongodb.net/paykeeperData?retryWrites=true&w=majority';
@@ -15,6 +16,7 @@ const app = express();
 // Middleware
 app.use(cors());
 app.use(express.json()); // For parsing application/json
+app.use(express.static(path.join(__dirname, '..'))); // Serve static files from the root directory (or change '..' if your static files are in a different folder)
 
 // User schema
 const userSchema = new mongoose.Schema({
@@ -194,6 +196,10 @@ app.post('/submit-contact', async (req, res) => {
   }
 });
 
+// For root route, serve the index.html from the root (adjust path if needed)
+app.get('/', (req, res) => {
+  res.sendFile(path.join(__dirname, '..', 'index.html'));  // This assumes index.html is in the root directory
+});
 
 // Start the server
 const PORT = process.env.PORT || 10000;
