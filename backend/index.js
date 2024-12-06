@@ -3,14 +3,6 @@ const cors = require('cors');
 const mongoose = require('mongoose');
 const bcrypt = require('bcryptjs'); // Ensure bcrypt is imported
 const path = require('path');
-const corsOptions = {
-  origin: ['https://void-paykeeper-2.onrender.com/'], // Update with the actual URL of your deployed frontend
-  methods: 'GET, POST, PUT, DELETE',
-  allowedHeaders: 'Content-Type, Authorization',
-};
-
-app.use(cors(corsOptions));
-
 
 // MongoDB connection
 const dbURI = 'mongodb+srv://vaibhavsalve645:FsbxDbYVNw3cB42p@cluster0.m4md1.mongodb.net/paykeeperData?retryWrites=true&w=majority';
@@ -21,8 +13,16 @@ mongoose.connect(dbURI, { useNewUrlParser: true, useUnifiedTopology: true })
 // Initialize app
 const app = express();
 
+// CORS configuration
+const corsOptions = {
+  origin: ['https://your-frontend-url.onrender.com'], // Update with the actual URL of your deployed frontend
+  methods: 'GET, POST, PUT, DELETE',
+  allowedHeaders: 'Content-Type, Authorization',
+};
+
+app.use(cors(corsOptions));  // Apply CORS middleware here
+
 // Middleware
-app.use(cors());
 app.use(express.json()); // For parsing application/json
 app.use(express.static(path.join(__dirname, '..'))); // Serve static files from the root directory (or change '..' if your static files are in a different folder)
 
@@ -112,14 +112,12 @@ app.post('/api/users/signin', async (req, res) => {
                 userType: user.userType,
                 shopName: user.shopName || null,
             },
-            
         });
     } catch (error) {
         console.error('Error during sign-in:', error);
         res.status(500).json({ message: 'Internal Server Error' });
     }
 });
-
 
 // Dashboard route (combined data)
 app.get('/api/dashboard/:userId', async (req, res) => {
