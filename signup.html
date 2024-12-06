@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="signup.css">
+    <title>Sign Up - PayKeeper</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="logo">PayKeeper</div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="signin.html">Sign In</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="form-container">
+        <h2>Sign Up</h2>
+        <form id="signupForm">
+            <label for="user-type">User Type:</label>
+            <select id="user-type" name="userType" onchange="toggleShopNameField()">
+                <option value="individual">Individual</option>
+                <option value="shopkeeper">Shopkeeper</option>
+            </select>
+
+            <div id="shop-name-container" style="display: none;">
+                <label for="shop-name">Shop Name:</label>
+                <input type="text" id="shop-name" name="shopName">
+            </div>
+
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="mobile">Mobile Number:</label>
+            <input type="tel" id="mobile" name="mobile" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+
+            <button type="submit">Sign Up</button>
+        </form>
+        <a href="signin.html" id="in">Existing user? Sign in</a>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 PayKeeper. All rights reserved.</p>
+        <ul>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Terms of Service</a></li>
+        </ul>
+    </footer>
+
+    <script>
+        function toggleShopNameField() {
+            const userType = document.getElementById('user-type').value;
+            const shopNameContainer = document.getElementById('shop-name-container');
+            
+            if (userType === 'shopkeeper') {
+                shopNameContainer.style.display = 'block'; // Show shop name input
+            } else {
+                shopNameContainer.style.display = 'none'; // Hide shop name input
+            }
+        }
+    </script>
+    <script src="signup.js"></script>
+</body>
+</html>

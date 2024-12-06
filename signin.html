@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign In - PayKeeper</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap" rel="stylesheet">
+    <link href="signin.css" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="logo">PayKeeper</div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="signup.html">Sign Up</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="form-section">
+        <h2>Welcome Back</h2>
+        <form id="signinForm">
+            <input type="email" placeholder="Email" id="email" required>
+            <input type="password" placeholder="Password" id="password" required>
+            <button type="submit" id="submit">Sign In</button>
+        </form>
+        <p><a href="signup.html">Don't have an account? Sign Up</a></p>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 PayKeeper. All rights reserved.</p>
+        <ul>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Terms of Service</a></li>
+        </ul>
+    </footer>
+    <script>
+        const signinForm = document.getElementById('signin-form');
+if (signinForm) {
+    signinForm.addEventListener('submit', function (e) {
+        e.preventDefault();
+        // form handling logic
+    });
+}
+
+    </script>
+    
+    <script src="scripts/main.js"></script>
+    <script src="backend/signin.js"></script>
+</body>
+</html>

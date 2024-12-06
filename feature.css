@@ -1,0 +1,242 @@
+/* General styles */
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background-color: #f4f4f9;
+}
+
+/* Navbar */
+.navbar {
+    background: linear-gradient(90deg, #4caf50, #2e7d32);
+    padding: 1rem;
+    color: white;
+}
+
+.navbar-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.navbar-menu {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+}
+
+/* Navbar Menu Links */
+.navbar-menu li a {
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    position: relative; /* Needed for underline styling */
+}
+
+.navbar-menu li a.active {
+    text-decoration: underline; /* Underline for the active link */
+}
+
+/* Add hover effect for all links */
+.navbar-menu li a:hover {
+    text-decoration: underline; /* Underline on hover */
+}
+
+/* Optional: Use a custom underline effect with animation */
+.navbar-menu li a::after {
+    content: '';
+    position: absolute;
+    bottom: -2px; /* Adjust based on font size */
+    left: 0;
+    width: 0;
+    height: 2px; /* Thickness of the underline */
+    background: white;
+    transition: width 0.3s ease;
+}
+
+.navbar-menu li a:hover::after {
+    width: 100%; /* Full underline on hover */
+}
+
+.navbar-menu li a.active::after {
+    width: 100%; /* Full underline for active link */
+}
+
+
+/* Navbar toggle (hidden on larger screens) */
+.navbar-toggle {
+    display: none; /* Hidden by default for large screens */
+    cursor: pointer;
+    font-size: 1.5rem;
+    color: white;
+    background: none;
+    border: none;
+}
+
+@media (max-width: 768px) {
+    /* Adjust navbar menu for smaller screens */
+    .navbar-menu {
+        display: none; /* Hidden by default */
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+        width: 100%;
+        padding: 0.5rem 0;
+        background-color: #4caf50; /* Same as navbar background */
+    }
+
+    .navbar-menu.active {
+        display: flex; /* Show when toggle is active */
+    }
+
+    .navbar-menu li {
+        margin: 0 auto;
+    }
+
+    .navbar-toggle {
+        display: block; /* Show toggle button */
+    }
+}
+
+@media (min-width: 769px) {
+    /* Restore the default navbar menu layout for larger screens */
+    .navbar-menu {
+        display: flex; /* Always show the navbar on large screens */
+        flex-direction: row;
+        align-items: center;
+        justify-content: flex-end;
+        gap: 1.5rem;
+    }
+
+    .navbar-toggle {
+        display: none; /* Hide toggle button */
+    }
+}
+
+/* Hero Section */
+.hero {
+    background: linear-gradient(120deg, #6dd5ed, #2193b0);
+    color: white;
+    text-align: center;
+    padding: 3rem 2rem;
+}
+
+.hero h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.hero h1 .highlight {
+    color: #ffde59;
+}
+
+.hero p {
+    font-size: 1.2rem;
+}
+
+/* Features Section */
+.features {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    padding: 3rem 2rem;
+    background-color: white;
+}
+
+.feature-card {
+    background: #e3f2fd;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    padding: 1.5rem;
+    width: 300px;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+}
+
+.feature-icon {
+    width: 100px;
+    height: 100px;
+    margin-bottom: 1rem;
+}
+
+.feature-card h3 {
+    margin-bottom: 0.5rem;
+    color: #1a73e8;
+}
+
+.feature-card p {
+    color: #444;
+    font-size: 1rem;
+}
+
+/* Call-to-action Section */
+.cta {
+    text-align: center;
+    padding: 2rem;
+    background: linear-gradient(90deg, #f12711, #f5af19);
+    color: white;
+}
+
+.cta h2 {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+.cta p {
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+}
+
+.cta-button {
+    text-decoration: none;
+    background: #ffb74d;
+    color: white;
+    padding: 0.8rem 2rem;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-weight: bold;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: background 0.3s;
+}
+
+.cta-button:hover {
+    background: #ffa726;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 1rem;
+    background-color: #2e7d32;
+    color: white;
+    font-size: 0.9rem;
+}
+
+/* Responsive Feature Cards */
+.features {
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    padding: 2rem 1rem;
+}
+
+.feature-card {
+    flex: 1 1 calc(100% - 2rem); /* Full width for smaller screens */
+    max-width: 300px; /* Maintain consistent card size */
+}
+
+@media (min-width: 768px) {
+    .feature-card {
+        flex: 1 1 calc(50% - 2rem); /* Two cards per row */
+    }
+}
+
+@media (min-width: 992px) {
+    .feature-card {
+        flex: 1 1 calc(33.33% - 2rem); /* Three cards per row */
+    }
+}

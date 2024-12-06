@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PayKeeper</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap" rel="stylesheet">
+  <link href="styles.css" rel="stylesheet">
+</head>
+<body>
+  <header>
+    <div class="logo">PayKeeper</div>
+    <nav>
+      <ul>
+        <li><a href="#" class="nav-link" id="home-link">Home</a></li>
+        <li><a href="feature.html" class="nav-link">Features</a></li>
+        <li><a href="#services" class="nav-link">Services</a></li>
+        <li><a href="signin.html" class="nav-link">Sign In</a></li>
+        <li><a href="signup.html" class="nav-link">Sign Up</a></li>
+      </ul>
+      <button class="navbar-toggle" id="navbar-toggle">&#9776;</button> <!-- Hamburger icon -->
+    </nav>
+  </header>
+  
+  <section class="hero">
+    <h1 id="hed">PayKeeper</h1>
+    <p style="color:white">Your Financial Bridge for Borrowing, Lending, and Clearing Debts</p>
+    <a href="signup.html"><button class="btn">Get Started</button></a>
+  </section>
+
+  <!-- Services Section -->
+  <section id="services">
+    <div class="container">
+      <h2 style="text-align: center; font-size: 36px; font-weight: bold; color: #0056b3;">Our Services</h2>
+      <p style="text-align: center; font-size: 18px; color: #666;">What PayKeeper offers to make your financial management easier.</p>
+
+      <div class="row">
+        <!-- Card 1: Lend Money -->
+        <div class="col-md-4">
+          <div class="service-card">
+            <div class="card" style="border: none; border-radius: 15px; overflow: hidden; background-color: #ffffff; transition: transform 0.3s, box-shadow 0.3s; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);">
+              <div class="card-body" style="text-align: center; padding: 40px; position: relative;">
+                <img src="images/lend_icon.jfif" alt="Lend Money" style="width: 100px; margin-bottom: 20px;">
+                <h4 style="font-size: 24px; color: #0056b3; font-weight: bold;">Lend Money</h4>
+                <p style="color: #666;">Easily lend money to trusted individuals and track payments seamlessly.</p>
+                <div class="overlay"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 2: Clear Debt -->
+        <div class="col-md-4">
+          <div class="service-card">
+            <div class="card" style="border: none; border-radius: 15px; overflow: hidden; background-color: #ffffff; transition: transform 0.3s, box-shadow 0.3s; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);">
+              <div class="card-body" style="text-align: center; padding: 40px; position: relative;">
+                <img src="images/debt.webp" alt="Clear Debt" style="width: 100px; margin-bottom: 20px;">
+                <h4 style="font-size: 24px; color: #0056b3; font-weight: bold;">Clear Debt</h4>
+                <p style="color: #666;">Keep track of your debts and clear them easily with our tools.</p>
+                <div class="overlay"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 3: Borrow Money -->
+        <div class="col-md-4">
+          <div class="service-card">
+            <div class="card" style="border: none; border-radius: 15px; overflow: hidden; background-color: #ffffff; transition: transform 0.3s, box-shadow 0.3s; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);">
+              <div class="card-body" style="text-align: center; padding: 40px; position: relative;">
+                <img src="images/borrow.png" alt="Borrow Money" style="width: 100px; margin-bottom: 20px;">
+                <h4 style="font-size: 24px; color: #0056b3; font-weight: bold;">Borrow Money</h4>
+                <p style="color: #666;">Access loans quickly with low interest rates and flexible repayment options.</p>
+                <div class="overlay"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section class="contact-us">
+    <div class="contact-container">
+      <h2>Contact Us</h2>
+      <p>If you have any questions or need assistance, feel free to reach out to us!</p>
+      <form class="contact-form" id="contact-form">
+        <div class="form-group">
+          <input type="text" id="name" name="name" placeholder="Your Name" required>
+        </div>
+        <div class="form-group">
+          <input type="email" id="email" name="email" placeholder="Your Email" required>
+        </div>
+        <div class="form-group">
+          <textarea id="message" name="message" rows="5" placeholder="Your Message" required></textarea>
+        </div>
+        <button type="submit" class="submit-btn">Send Message</button>
+      </form>
+      
+        
+    </div>
+  </section>
+  
+  
+  <section id="team" class="team-section">
+    <div class="container">
+        <h2 class="section-title">Meet Our Team: Team VOID</h2>
+        <div class="team-container">
+            <!-- Team Member 1 -->
+            <div class="team-card">
+                <img src="atharva.png" alt="Team Member 1" class="team-img">
+                <h3 class="team-name">Atharva Narkhede</h3>
+                <p class="team-role">Frontend Developer</p>
+            </div>
+            <!-- Team Member 2 -->
+            <div class="team-card">
+                <img src="vaibhav.png" alt="Team Member 2" class="team-img">
+                <h3 class="team-name">Vaibhav Salve</h3>
+                <p class="team-role">Backend Developer</p>
+            </div>
+            <!-- Team Member 3 -->
+            <div class="team-card">
+                <img src="pratap.png" alt="Team Member 3" class="team-img">
+                <h3 class="team-name">Pratap Sanap</h3>
+                <p class="team-role">UI developer</p>
+            </div>
+        </div>
+    </div>
+</section>
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2024 PayKeeper. All rights reserved.</p>
+    <ul>
+      <li><a href="#">Privacy Policy</a></li>
+      <li><a href="#">Terms of Service</a></li>
+    </ul>
+  </footer>
+ 
+  <script src="scripts/main.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+  document.getElementById('home-link').addEventListener('click', function (e) {
+    e.preventDefault();  // Prevent default anchor behavior
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'  // Smooth scrolling
+    });
+  });
+});
+
+// Navbar toggle for mobile
+const toggleButton = document.getElementById('navbar-toggle');
+    const menu = document.querySelector('nav ul');
+
+    toggleButton.addEventListener('click', () => {
+      menu.classList.toggle('show'); // Toggle the visibility of the menu
+    });
+
+    // Smooth scroll for home link
+    document.getElementById('home-link').addEventListener('click', function (e) {
+      e.preventDefault();
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    });
+
+  </script>
+  
+</body>
+</html>
